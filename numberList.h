@@ -12,7 +12,7 @@ class numberList{
 public:
 	numberList(int numberCount, int numberMax);
 	void print();
-	void radix
+	void radixSort();
 };
 
 #endif
