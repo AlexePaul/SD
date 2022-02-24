@@ -6,11 +6,12 @@
 using namespace std;
 
 class numberList{
-	//int array[__MaxN];
-	vector<int> v;
+	vector<int> numbers;
 	int numberCount;
+	int radixBase;
+	int maxDigits();
 public:
-	numberList(int numberCount, int numberMax);
+	numberList(int numberCount, int numberMax, int rbase = 10);
 	void print();
 	void radixSort();
 };

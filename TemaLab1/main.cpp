@@ -5,7 +5,11 @@ using namespace std;
 
 int main(){
 	int maxNumbers, maxSize;
-	cin >> maxNumbers >> maxSize;
-	numberList ob(maxNumbers, maxSize);
+	cout << "Max Number = ";
+	cin >> maxNumbers;
+	cout << "\nMax Size = ";
+	cin >> maxSize;
+	numberList ob(maxSize,maxNumbers);
 	ob.print();
+	ob.radixSort();
 }
