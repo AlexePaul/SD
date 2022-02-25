@@ -4,12 +4,13 @@
 using namespace std;
 
 int main(){
-	int maxNumbers, maxSize;
+	long long maxNumbers, maxSize;
 	cout << "Max Number = ";
 	cin >> maxNumbers;
 	cout << "\nMax Size = ";
 	cin >> maxSize;
-	numberList ob(maxSize,maxNumbers);
-	ob.print();
+	int nr = 1 << 16;
+	numberList ob(maxSize,maxNumbers, nr);
 	ob.radixSort();
+	ob.checkSort();
 }

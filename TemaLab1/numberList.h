@@ -6,14 +6,15 @@
 using namespace std;
 
 class numberList{
-	vector<int> numbers;
-	int numberCount;
-	int radixBase;
-	int maxDigits();
+	vector<long long> numbers;
+	long long numberCount;
+	long long radixBase;
+	long long maxDigits();
 public:
-	numberList(int numberCount, int numberMax, int rbase = 10);
+	numberList(long long numberCount, long long numberMax, long long rbase = 10);
 	void print();
 	void radixSort();
+	void checkSort();
 };
 
 #endif
