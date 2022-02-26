@@ -9,12 +9,14 @@ class numberList{
 	vector<long long> numbers;
 	long long numberCount;
 	long long radixBase;
-	long long maxDigits();
+	int maxDigits();
+	bool checkSort();
 public:
 	numberList(long long numberCount, long long numberMax, long long rbase = 10);
 	void print();
 	void radixSort();
-	void checkSort();
+	void cppSort();
+	~numberList();
 };
 
 #endif

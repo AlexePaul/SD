@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
+#include <algorithm>
+#include <sys/time.h>
 
 using namespace std;
 
@@ -11,21 +13,25 @@ numberList::numberList(long long numberCount, long long numberMax, long long rBa
 	this->numberCount = numberCount;
 	this->radixBase = rBase;
 	srand(time(NULL));
-	for (long long i = 0; i < numberCount; ++i){
+	for (int i = 0; i < numberCount; ++i){
 		this->numbers[i] = rand()%numberMax;
 	}
 }
 
+numberList::~numberList(){
+	this->numbers.clear();
+}
+
 void numberList::print(){
-	for(long long i = 0; i < this->numberCount; ++i){
+	for(int i = 0; i < this->numberCount; ++i){
 		cout << this->numbers[i] << " ";
 	}
 	cout << '\n';
 }
 
-long long numberList::maxDigits(){
+int numberList::maxDigits(){
 	long long max = numbers[0];
-	for(long long i = 1; i < this->numberCount; ++i){
+	for(int i = 1; i < this->numberCount; ++i){
 		if(abs(numbers[i]) > max){
 			max = abs(numbers[i]);
 		}
@@ -34,37 +40,62 @@ long long numberList::maxDigits(){
 	long long count = 0;
 	while(max){
 		count++;
-		max /= this->radixBase;
+		max = max >> this->radixBase;
 	}
 
 	return count;
 }
 
 void numberList::radixSort(){
-	vector<long long>bucket[this->radixBase];
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+	vector<int>bucket[1 << this->radixBase];
 	long long numOfDigits = maxDigits();
-	long long power = 1;
-	for (long long p = 0; p < numOfDigits; ++p){
-		for(long long i = 0; i < this->numberCount; ++i){
-			bucket[(this->numbers[i]/power)%this->radixBase].push_back(numbers[i]);
+	long long power = 0;
+	for (int p = 0; p < numOfDigits; ++p){
+		for(int i = 0; i < this->numberCount; ++i){
+			bucket[(this->numbers[i]>>power)%(1 << this->radixBase)].push_back(numbers[i]);
 		}
 		long long k = 0;
-		for (long long i = 0; i < this->radixBase; ++i){
-			for (long long j = 0; j < bucket[i].size(); ++j){
+		for (int i = 0; i < (1 <<this->radixBase); ++i){
+			for (int j = 0; j < bucket[i].size(); ++j){
 				this->numbers[k++] = bucket[i][j];
+				//cout << bucket[i][j] << ' ';
 			}
+			//cout << '\n';
+			//cout << i << ": ";
 			bucket[i].clear();
 		}
-		power *= this->radixBase;
+		power += this->radixBase;
 	}
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    if(this->checkSort() == true)
+   		cout << "RadixSort: " << elapsed << '\n'; 
 }
 
-void numberList::checkSort(){
-	for(long long i = 1; i < this->numberCount; ++i){
+bool numberList::checkSort(){
+	for(int i = 1; i < this->numberCount; ++i){
 		if(this->numbers[i] < this->numbers[i-1]){
 			cout << "The numberList isn't sorted!\n";
-			return;
+			cout << this->numbers[i] << ' ' << this->numbers[i-1];
+			return false;
 		}
 	}
-	cout << "The numberList is sorted!\n";
+	return true;
+}
+
+void numberList::cppSort(){
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+	sort(this->numbers.begin(), this->numbers.end());
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    if(this->checkSort() == true)
+   		cout << "Cpp-Sort: " << elapsed << '\n'; 
+
 }
