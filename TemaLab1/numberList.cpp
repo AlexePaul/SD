@@ -49,21 +49,18 @@ int numberList::maxDigits(){
 void numberList::radixSort(){
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
-	vector<int>bucket[1 << this->radixBase];
+	vector<long long>bucket[1 << this->radixBase];
 	long long numOfDigits = maxDigits();
 	long long power = 0;
 	for (int p = 0; p < numOfDigits; ++p){
 		for(int i = 0; i < this->numberCount; ++i){
-			bucket[(this->numbers[i]>>power)%(1 << this->radixBase)].push_back(numbers[i]);
+			bucket[(this->numbers[i]>>power)%(1 << this->radixBase)].push_back(this->numbers[i]);
 		}
 		long long k = 0;
 		for (int i = 0; i < (1 <<this->radixBase); ++i){
 			for (int j = 0; j < bucket[i].size(); ++j){
 				this->numbers[k++] = bucket[i][j];
-				//cout << bucket[i][j] << ' ';
 			}
-			//cout << '\n';
-			//cout << i << ": ";
 			bucket[i].clear();
 		}
 		power += this->radixBase;
@@ -98,4 +95,68 @@ void numberList::cppSort(){
     if(this->checkSort() == true)
    		cout << "Cpp-Sort: " << elapsed << '\n'; 
 
+}
+
+void numberList::merge(int lf, int mid, int rt){
+	long long lenOfLfVector = mid - lf + 1;
+	long long lenOfRtVector = rt - mid;
+	vector<long long>lfVector(lenOfLfVector);
+	vector<long long>rtVector(lenOfRtVector);
+
+	for(int i = 0; i < lenOfLfVector; i++)
+        lfVector[i] = this->numbers[lf + i];
+    for(int i = 0; i < lenOfRtVector; i++)
+        rtVector[i] = this->numbers[mid + 1 + i];
+    int i = 0, j = 0;
+    int mergeIndex = lf;
+
+    while(i < lenOfLfVector && j < lenOfRtVector){
+    	if(lfVector[i] < rtVector[j]){
+    		this->numbers[mergeIndex] = lfVector[i];
+    		mergeIndex++;
+    		i++;
+    	}
+    	else{
+    		this->numbers[mergeIndex] = rtVector[j];
+    		mergeIndex++;
+    		j++;
+    	}
+    }
+
+    while(i < lenOfLfVector){
+    	this->numbers[mergeIndex] = lfVector[i];
+    	mergeIndex++;
+    	i++;
+    }
+
+    while(j < lenOfRtVector){
+    	this->numbers[mergeIndex] = rtVector[j];
+    	mergeIndex++;
+    	j++;
+    }
+}
+
+void numberList::mergeSort(int lf, int rt){
+	long long mid = (lf+rt)/2;
+
+	if(lf >= rt)
+		return;
+
+	mergeSort(lf, mid);
+	mergeSort(mid+1, rt);
+	merge(lf, mid, rt);
+}
+
+void numberList::mergeSort(){
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+
+	mergeSort(0, this->numberCount);
+
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    if(this->checkSort() == true)
+   		cout << "MergeSort: " << elapsed << '\n';
 }
