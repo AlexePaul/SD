@@ -1,42 +1,29 @@
 #include "numberList.h"
+#include <fstream>
 #include <iostream>
 
 using namespace std;
 
+ifstream fin("test.txt");
+
 int main(){
-	long long bucketNr, numberCount, numberMax, rBase;
-	cout << "Number Count = ";
-	cin >> numberCount;
-	cout << "\nNumber Max = ";
-	cin >> numberMax;
-	cout << "\nRadix Base = ";
-	cin >> rBase;
-	cout << "\nBucket Number = ";
-	cin >> bucketNr;
+	long long bucketNr, numberCount, numberMax, rBase, testCount;
+	fin >> testCount;
+	numberList ob;
+	for(int l = 0; l < testCount; ++l){
+		fin >> numberCount;
+		fin >> numberMax;
+		fin >> rBase;
+		fin >> bucketNr;
 
-	numberList ob(numberCount, numberMax, rBase, bucketNr);
+		ob.valueInit(numberCount, numberMax, rBase, bucketNr);
 
-	ob.bucketSort();
-	cout << "here";
-
-	//ob.~numberList();
-    //new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
-	//ob.shellSort();
-
-	ob.~numberList();
-    new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
-
-	ob.radixSort();
-
-    ob.~numberList();
-    new(&ob) numberList(numberCount,numberMax, rBase, bucketNr);
-
-	ob.cppSort();
-
-	ob.~numberList();
-    new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
-
-    ob.mergeSort();
-
+		ob.bucketSort();
+		ob.radixSort();
+	    ob.mergeSort();
+	    ob.cppSort();
+	    ob.shellSort();
+	    ob.selectionSort();
+	}
     return 0;
 }
