@@ -196,25 +196,38 @@ void numberList::shellSort(){
 }
 
 void numberList::bucketSort(){
-	vector<int>bucket[this->bucketCount];
+	vector<int>bucket[this->bucketCount+1];
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
 
 	for(int i = 0; i < this->numberCount; ++i){
+		bool ins = 0;
 		long long bucketToInsertIn = this->numbers[i]/(this->numberMax/this->bucketCount);
-		for(auto it = bucket[bucketToInsertIn].begin(); it+1 != bucket[bucketToInsertIn].end(); it++){
-			if(*it<this->numbers[i] && this->numbers[i] < *(it+1)){
-				bucket[bucketToInsertIn].insert(it,this->numbers[i],1);
-				continue;
+		for(int j = 0; j+1 < bucket[bucketToInsertIn].size(); ++j){
+			if(bucket[bucketToInsertIn][j] <= this->numbers[i] && this->numbers[i] < bucket[bucketToInsertIn][j+1]){
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin() + j + 1,this->numbers[i]);
+				ins = 1;
+				break;
 			}
 		}
-		bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].end(),this->numbers[i],1);
+		if(bucket[bucketToInsertIn].size() == 0){
+			bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin(),this->numbers[i]);
+			continue;
+		}
+		if(ins == 0 && bucket[bucketToInsertIn].size() > 0){
+			if(bucket[bucketToInsertIn][0] >= this->numbers[i])
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin(),this->numbers[i]);
+			if(bucket[bucketToInsertIn][0] < this->numbers[i])
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].end(),this->numbers[i]);
+			
+		}
 	}
 
 	int k = 0;
 	for(int i = 0; i < this->bucketCount; ++i){
-		for(int j = 0; j < bucket[i].size(); ++j)
-		this->numbers[k++] = bucket[i][j];
+		for(int j = 0; j < bucket[i].size(); ++j){
+			this->numbers[k++] = bucket[i][j];
+		}
 	}
 
 	gettimeofday(&end, 0);

@@ -17,7 +17,7 @@ class numberList{
 	void merge(int lf, int mid, int rt);
 	void mergeSort(int lf, int rt);
 public:
-	numberList(long long numberCount, long long numberMax, long long rBase = 10, long long bucketNr = 1000);
+	numberList(long long numberCount, long long numberMax, long long rBase = 10, long long bucketNr = 10);
 	void print();
 	void radixSort();
 	void cppSort();
