@@ -4,13 +4,39 @@
 using namespace std;
 
 int main(){
-	long long maxNumbers, maxSize;
-	cout << "Max Number = ";
-	cin >> maxNumbers;
-	cout << "\nMax Size = ";
-	cin >> maxSize;
-	int nr = 1 << 16;
-	numberList ob(maxSize,maxNumbers, nr);
+	long long bucketNr, numberCount, numberMax, rBase;
+	cout << "Number Count = ";
+	cin >> numberCount;
+	cout << "\nNumber Max = ";
+	cin >> numberMax;
+	cout << "\nRadix Base = ";
+	cin >> rBase;
+	cout << "\nBucket Number = ";
+	cin >> bucketNr;
+
+	numberList ob(numberCount, numberMax, rBase, bucketNr);
+
+	ob.bucketSort();
+	
+	ob.~numberList();
+    new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
+
+	ob.shellSort();
+
+	ob.~numberList();
+    new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
+
 	ob.radixSort();
-	ob.checkSort();
+
+    ob.~numberList();
+    new(&ob) numberList(numberCount,numberMax, rBase, bucketNr);
+
+	ob.cppSort();
+
+	ob.~numberList();
+    new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
+
+    ob.mergeSort();
+
+    return 0;
 }
