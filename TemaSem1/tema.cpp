@@ -38,3 +38,10 @@ int main(){
 	}
 	cout << nrAparitii(v, n, s);
 }
+/*
+Verificare daca n cuvinte (de maxim l litere) sunt anagrame:
+
+Vom folosi counting sort (putem folosi deoarece avem doar 26 de litere) pentru a putea sorta literele din cuvinte.
+Apoi, vom verifica cate cuvinte sunt la fel, comparand toate cuvintele intre ele.
+Complexitate: O(n^2*l) 
+*/
