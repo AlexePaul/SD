@@ -9,9 +9,11 @@
 
 using namespace std;
 
-numberList::numberList(long long numberCount, long long numberMax, long long rBase):numbers(numberCount){
+numberList::numberList(long long numberCount, long long numberMax, long long rBase, long long bucketNr):numbers(numberCount){
 	this->numberCount = numberCount;
+	this->numberMax = numberMax;
 	this->radixBase = rBase;
+	this->bucketCount = bucketNr;
 	srand(time(NULL));
 	for (int i = 0; i < numberCount; ++i){
 		this->numbers[i] = rand()%numberMax;
@@ -159,4 +161,79 @@ void numberList::mergeSort(){
     double elapsed = seconds + microseconds*1e-6;
     if(this->checkSort() == true)
    		cout << "MergeSort: " << elapsed << '\n';
+}
+
+int numberList::maxPow2(){
+	int n = this->numberCount;
+	int kcount = 0;
+	while(n != 1){
+		kcount++;
+		n = n >> 1;
+	}
+	return 1 << kcount;
+}
+
+void numberList::shellSort(){
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+
+	for(int gap = maxPow2(); gap > 0; gap = gap >> 1){
+		for(int i = gap; i < this->numberCount; ++i){
+			long long aux = this->numbers[i];
+			int j;
+			for(j = i; j >= gap && this->numbers[j - gap] > aux; j -= gap)
+				this->numbers[j] = this->numbers[j - gap];
+			this->numbers[j] = aux;
+		}
+	}
+
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    if(this->checkSort() == true)
+   		cout << "ShellSort: " << elapsed << '\n';
+}
+
+void numberList::bucketSort(){
+	vector<int>bucket[this->bucketCount+1];
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+
+	for(int i = 0; i < this->numberCount; ++i){
+		bool ins = 0;
+		long long bucketToInsertIn = this->numbers[i]/(this->numberMax/this->bucketCount);
+		for(int j = 0; j+1 < bucket[bucketToInsertIn].size(); ++j){
+			if(bucket[bucketToInsertIn][j] <= this->numbers[i] && this->numbers[i] < bucket[bucketToInsertIn][j+1]){
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin() + j + 1,this->numbers[i]);
+				ins = 1;
+				break;
+			}
+		}
+		if(bucket[bucketToInsertIn].size() == 0){
+			bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin(),this->numbers[i]);
+			continue;
+		}
+		if(ins == 0 && bucket[bucketToInsertIn].size() > 0){
+			if(bucket[bucketToInsertIn][0] >= this->numbers[i])
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].begin(),this->numbers[i]);
+			if(bucket[bucketToInsertIn][0] < this->numbers[i])
+				bucket[bucketToInsertIn].insert(bucket[bucketToInsertIn].end(),this->numbers[i]);
+			
+		}
+	}
+
+	int k = 0;
+	for(int i = 0; i < this->bucketCount; ++i){
+		for(int j = 0; j < bucket[i].size(); ++j){
+			this->numbers[k++] = bucket[i][j];
+		}
+	}
+
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    double elapsed = seconds + microseconds*1e-6;
+    if(this->checkSort() == true)
+   		cout << "BucketSort: " << elapsed << '\n';
 }
