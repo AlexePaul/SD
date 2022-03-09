@@ -8,6 +8,7 @@ using namespace std;
 class numberList{
 	vector<long long> numbers;
 	vector<long long> initialNumbers;
+	vector<long long> sortedNumbers;
 	long long numberCount;
 	long long numberMax;
 	long long radixBase;

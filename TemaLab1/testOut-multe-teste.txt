@@ -1,0 +1,517 @@
+Number Count = 100
+Number Max = 100
+Radix Base = 16
+Bucket Count = 100
+
+BucketSort: 0
+RadixSort: 0.002992
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0
+
+Number Count = 100
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.000997
+RadixSort: 0.000997
+MergeSort: 0.000998
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0
+
+Number Count = 100
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0.000997
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0
+
+Number Count = 100
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0.000997
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0
+
+Number Count = 100
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0.000997
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0
+
+Number Count = 1000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 100
+
+BucketSort: 0.000997
+RadixSort: 0.000997
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0.003989
+
+Number Count = 1000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.000997
+RadixSort: 0.000998
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0.003989
+
+Number Count = 1000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.000998
+RadixSort: 0.000997
+MergeSort: 0
+CppSort: 0
+ShellSort: 0.000997
+SelectionSort: 0.003989
+
+Number Count = 1000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.000997
+RadixSort: 0.000998
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0.004987
+
+Number Count = 1000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0.001995
+MergeSort: 0
+CppSort: 0
+ShellSort: 0
+SelectionSort: 0.004987
+
+Number Count = 10000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 100
+
+BucketSort: 0.004987
+RadixSort: 0.001995
+MergeSort: 0.004017
+CppSort: 0.001998
+ShellSort: 0.002989
+SelectionSort: 0.340094
+
+Number Count = 10000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.001994
+RadixSort: 0.001996
+MergeSort: 0.003987
+CppSort: 0.001995
+ShellSort: 0.00499
+SelectionSort: 0.389926
+
+Number Count = 10000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.001993
+RadixSort: 0.002992
+MergeSort: 0.005014
+CppSort: 0.001994
+ShellSort: 0.003993
+SelectionSort: 0.482706
+
+Number Count = 10000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.001996
+RadixSort: 0.002988
+MergeSort: 0.004986
+CppSort: 0.000998
+ShellSort: 0.003989
+SelectionSort: 0.46078
+
+Number Count = 10000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.006984
+RadixSort: 0.002989
+MergeSort: 0.004986
+CppSort: 0.001995
+ShellSort: 0.003955
+SelectionSort: 0.4618
+
+Number Count = 100000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 100
+
+BucketSort: 0.419843
+RadixSort: 0.00399
+MergeSort: 0.045912
+CppSort: 0.016955
+ShellSort: 0.050864
+SelectionSort: 35.1583
+
+Number Count = 100000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.053857
+RadixSort: 0.005984
+MergeSort: 0.04887
+CppSort: 0.017952
+ShellSort: 0.10073
+SelectionSort: 34.3781
+
+Number Count = 100000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.035904
+RadixSort: 0.012965
+MergeSort: 0.049833
+CppSort: 0.020942
+ShellSort: 0.108738
+SelectionSort: 40.6123
+
+Number Count = 100000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.096741
+RadixSort: 0.024935
+MergeSort: 0.052858
+CppSort: 0.019947
+ShellSort: 0.097741
+SelectionSort: 49.3885
+
+Number Count = 100000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 0.681152
+RadixSort: 0.023933
+MergeSort: 0.053856
+CppSort: 0.020944
+ShellSort: 0.109709
+SelectionSort: 48.9422
+
+Number Count = 1000000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 100
+
+BucketSort: 42.621
+RadixSort: 0.034905
+MergeSort: 0.517616
+CppSort: 0.201462
+ShellSort: 1.0462
+SelectionSort: 3428.69
+
+Number Count = 1000000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 4.37733
+RadixSort: 0.035918
+MergeSort: 0.520595
+CppSort: 0.210451
+ShellSort: 2.13924
+SelectionSort: 3430.98
+
+Number Count = 1000000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 2.54722
+RadixSort: 0.053855
+MergeSort: 0.536567
+CppSort: 0.218416
+ShellSort: 2.78856
+SelectionSort: 3503.94
+
+Number Count = 1000000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 6.74794
+RadixSort: 0.090728
+MergeSort: 0.575428
+CppSort: 0.225397
+ShellSort: 3.08276
+SelectionSort: 3655.5
+
+Number Count = 1000000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 1000
+
+BucketSort: 64.9244
+RadixSort: 0.082765
+MergeSort: 0.552492
+CppSort: 0.237365
+ShellSort: 2.81046
+SelectionSort: 3688.59
+
+Number Count = 100
+Number Max = 100
+Radix Base = 8
+Bucket Count = 100
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 100
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 100
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 100
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 100
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 100
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.000998
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0
+RadixSort: 0.000998
+
+Number Count = 10000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 100
+
+BucketSort: 0.005984
+RadixSort: 0
+
+Number Count = 10000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 1000
+
+BucketSort: 0.001994
+RadixSort: 0.000999
+
+Number Count = 10000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.002992
+RadixSort: 0.000963
+
+Number Count = 10000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.001995
+RadixSort: 0.000999
+
+Number Count = 10000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.001995
+RadixSort: 0
+
+Number Count = 100000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 100
+
+BucketSort: 0.424831
+RadixSort: 0.003989
+
+Number Count = 100000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 1000
+
+BucketSort: 0.053826
+RadixSort: 0.005985
+
+Number Count = 100000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.021941
+RadixSort: 0.006981
+
+Number Count = 100000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.021941
+RadixSort: 0.005984
+
+Number Count = 100000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.075767
+RadixSort: 0.005985
+
+Number Count = 1000000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 100
+
+BucketSort: 42.4146
+RadixSort: 0.029927
+
+Number Count = 1000000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 1000
+
+BucketSort: 4.43614
+RadixSort: 0.059839
+
+Number Count = 1000000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.563514
+RadixSort: 0.054853
+
+Number Count = 1000000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 0.970405
+RadixSort: 0.051862
+
+Number Count = 1000000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 10000
+
+BucketSort: 6.78585
+RadixSort: 0.054853
+
+Number Count = 100
+Number Max = 100
+Radix Base = 4
+Bucket Count = 100
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 100
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 1000
+
+BucketSort: 0
+RadixSort: 0
+
+Number Count = 
