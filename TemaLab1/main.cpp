@@ -17,7 +17,7 @@ int main(){
 		fin >> numberCount;
 		fin >> numberMax;
 		fin >> rBase;
-		fin >> bucketNr;	
+		//fin >> bucketNr;	
 
 		if(bucketNr > numberMax)
 			bucketNr = numberMax;
@@ -38,9 +38,9 @@ int main(){
 		    ob.cppSort();
 		    ob.shellSort();
 		    ob.selectionSort();
+		    ob.bucketSort();
 		}
 		else{
-			ob.bucketSort();
 			ob.radixSort();
 		}
 		fout << '\n';

@@ -1,192 +1,1008 @@
 Number Count = 100
 Number Max = 1000
-Radix Base = 4
-Bucket Count = 1000
+Radix Base = 16
+Bucket Count = 2
 
-BucketSort: 0
+RadixSort: 0.00199
+
+Number Count = 100
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000966
+
+Number Count = 100
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000999
+
+Number Count = 100
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.001028
+
+Number Count = 100
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000999
+
+Number Count = 100
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000997
+
+Number Count = 1000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002024
+
+Number Count = 1000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000999
+
+Number Count = 1000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.001995
+
+Number Count = 1000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000998
+
+Number Count = 1000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000998
+
+Number Count = 1000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.000997
+
+Number Count = 1000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.001031
+
+Number Count = 10000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.001006
+
+Number Count = 10000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.001995
+
+Number Count = 10000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002993
+
+Number Count = 10000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002992
+
+Number Count = 10000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002993
+
+Number Count = 10000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002992
+
+Number Count = 10000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.002993
+
+Number Count = 100000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.004987
+
+Number Count = 100000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.005985
+
+Number Count = 100000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.01296
+
+Number Count = 100000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.019973
+
+Number Count = 100000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.01895
+
+Number Count = 100000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.018945
+
+Number Count = 100000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.01895
+
+Number Count = 1000000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.03188
+
+Number Count = 1000000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.033909
+
+Number Count = 1000000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.052859
+
+Number Count = 1000000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.091755
+
+Number Count = 1000000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.104722
+
+Number Count = 1000000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.108689
+
+Number Count = 1000000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.083776
+
+Number Count = 10000000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.298201
+
+Number Count = 10000000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.315119
+
+Number Count = 10000000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.406939
+
+Number Count = 10000000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.506659
+
+Number Count = 10000000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.494678
+
+Number Count = 10000000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.500658
+
+Number Count = 10000000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 0.495674
+
+Number Count = 100000000
+Number Max = 100
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 2.85038
+
+Number Count = 100000000
+Number Max = 1000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 3.07474
+
+Number Count = 100000000
+Number Max = 10000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 4.72337
+
+Number Count = 100000000
+Number Max = 100000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 4.83111
+
+Number Count = 100000000
+Number Max = 1000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 4.65056
+
+Number Count = 100000000
+Number Max = 10000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 4.6984
+
+Number Count = 100000000
+Number Max = 100000000
+Radix Base = 16
+Bucket Count = 2
+
+RadixSort: 4.64661
+
+Number Count = 100
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 2
+
 RadixSort: 0
 
 Number Count = 100
 Number Max = 10000
-Radix Base = 4
-Bucket Count = 10000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0
 RadixSort: 0
 
 Number Count = 100
 Number Max = 100000
-Radix Base = 4
-Bucket Count = 100000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0
 RadixSort: 0
 
 Number Count = 100
 Number Max = 1000000
-Radix Base = 4
-Bucket Count = 1000000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.003988
+RadixSort: 0
+
+Number Count = 100
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
 RadixSort: 0
 
 Number Count = 1000
 Number Max = 100
-Radix Base = 4
-Bucket Count = 100
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.000969
-RadixSort: 0
+RadixSort: 0.001
 
 Number Count = 1000
 Number Max = 1000
-Radix Base = 4
-Bucket Count = 1000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0
 RadixSort: 0
 
 Number Count = 1000
 Number Max = 10000
-Radix Base = 4
-Bucket Count = 10000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0
-RadixSort: 0
+RadixSort: 0.000997
 
 Number Count = 1000
 Number Max = 100000
-Radix Base = 4
-Bucket Count = 100000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0
 RadixSort: 0
 
 Number Count = 1000
 Number Max = 1000000
-Radix Base = 4
-Bucket Count = 1000000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.003989
+RadixSort: 0.000997
+
+Number Count = 1000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
 RadixSort: 0
+
+Number Count = 1000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.000998
 
 Number Count = 10000
 Number Max = 100
-Radix Base = 4
-Bucket Count = 100
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.006009
-RadixSort: 0.001001
+RadixSort: 0.000996
 
 Number Count = 10000
 Number Max = 1000
-Radix Base = 4
-Bucket Count = 1000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.001995
 RadixSort: 0.000997
 
 Number Count = 10000
 Number Max = 10000
-Radix Base = 4
-Bucket Count = 10000
+Radix Base = 8
+Bucket Count = 2
 
-BucketSort: 0.001996
-RadixSort: 0.001006
+RadixSort: 0
+
+Number Count = 10000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.000963
+
+Number Count = 10000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.000996
+
+Number Count = 10000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.000997
+
+Number Count = 10000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.000974
+
+Number Count = 100000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.003989
+
+Number Count = 100000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.005989
+
+Number Count = 100000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.005984
+
+Number Count = 100000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.004952
+
+Number Count = 100000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.005984
+
+Number Count = 100000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.004987
+
+Number Count = 100000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.004987
+
+Number Count = 1000000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.031888
+
+Number Count = 1000000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.052858
+
+Number Count = 1000000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.049866
+
+Number Count = 1000000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.048869
+
+Number Count = 1000000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.048869
+
+Number Count = 1000000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.048878
+
+Number Count = 1000000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.048868
+
+Number Count = 10000000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.290224
+
+Number Count = 10000000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.543582
+
+Number Count = 10000000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.520642
+
+Number Count = 10000000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.513599
+
+Number Count = 10000000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.514624
+
+Number Count = 10000000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.512645
+
+Number Count = 10000000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 0.507642
+
+Number Count = 100000000
+Number Max = 100
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 2.79153
+
+Number Count = 100000000
+Number Max = 1000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.45936
+
+Number Count = 100000000
+Number Max = 10000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.43348
+
+Number Count = 100000000
+Number Max = 100000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.24397
+
+Number Count = 100000000
+Number Max = 1000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.23596
+
+Number Count = 100000000
+Number Max = 10000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.17914
+
+Number Count = 100000000
+Number Max = 100000000
+Radix Base = 8
+Bucket Count = 2
+
+RadixSort: 5.1602
+
+Number Count = 100
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 10000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 100000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 1000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 100
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 100
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 10000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 100000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 1000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.001028
+
+Number Count = 1000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 1000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.000967
+
+Number Count = 10000
+Number Max = 100
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 10000
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0
+
+Number Count = 10000
+Number Max = 10000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.000995
 
 Number Count = 10000
 Number Max = 100000
 Radix Base = 4
-Bucket Count = 100000
+Bucket Count = 2
 
-BucketSort: 0.002029
-RadixSort: 0.001995
+RadixSort: 0.000997
 
 Number Count = 10000
 Number Max = 1000000
 Radix Base = 4
-Bucket Count = 1000000
+Bucket Count = 2
 
-BucketSort: 0.004987
+RadixSort: 0.001008
+
+Number Count = 10000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.000997
+
+Number Count = 10000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
 RadixSort: 0.000998
 
 Number Count = 100000
 Number Max = 100
 Radix Base = 4
-Bucket Count = 100
+Bucket Count = 2
 
-BucketSort: 0.583459
-RadixSort: 0.004987
+RadixSort: 0.004988
 
 Number Count = 100000
 Number Max = 1000
 Radix Base = 4
-Bucket Count = 1000
+Bucket Count = 2
 
-BucketSort: 0.071808
-RadixSort: 0.007978
+RadixSort: 0.006981
 
 Number Count = 100000
 Number Max = 10000
 Radix Base = 4
-Bucket Count = 10000
+Bucket Count = 2
 
-BucketSort: 0.023944
-RadixSort: 0.009947
+RadixSort: 0.009973
 
 Number Count = 100000
 Number Max = 100000
 Radix Base = 4
-Bucket Count = 100000
+Bucket Count = 2
 
-BucketSort: 0.024907
-RadixSort: 0.008975
+RadixSort: 0.008976
 
 Number Count = 100000
 Number Max = 1000000
 Radix Base = 4
-Bucket Count = 1000000
+Bucket Count = 2
 
-BucketSort: 0.027926
-RadixSort: 0.011968
+RadixSort: 0.009946
+
+Number Count = 100000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.008947
+
+Number Count = 100000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.009012
 
 Number Count = 1000000
 Number Max = 100
 Radix Base = 4
-Bucket Count = 100
+Bucket Count = 2
 
-BucketSort: 58.6399
-RadixSort: 0.052866
+RadixSort: 0.05486
 
 Number Count = 1000000
 Number Max = 1000
 Radix Base = 4
-Bucket Count = 1000
+Bucket Count = 2
 
-BucketSort: 5.9351
-RadixSort: 0.085769
+RadixSort: 0.069814
 
 Number Count = 1000000
 Number Max = 10000
 Radix Base = 4
-Bucket Count = 10000
+Bucket Count = 2
 
-BucketSort: 0.724044
-RadixSort: 0.095744
+RadixSort: 0.093716
 
 Number Count = 1000000
 Number Max = 100000
 Radix Base = 4
-Bucket Count = 100000
+Bucket Count = 2
 
-BucketSort: 0.382956
-RadixSort: 0.10073
+RadixSort: 0.091755
 
 Number Count = 1000000
 Number Max = 1000000
 Radix Base = 4
-Bucket Count = 1000000
+Bucket Count = 2
 
-BucketSort: 0.372025
-RadixSort: 0.093749
+RadixSort: 0.090757
+
+Number Count = 1000000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.08976
+
+Number Count = 1000000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.090757
+
+Number Count = 10000000
+Number Max = 100
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.509636
+
+Number Count = 10000000
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.737062
+
+Number Count = 10000000
+Number Max = 10000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.948427
+
+Number Count = 10000000
+Number Max = 100000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.944473
+
+Number Count = 10000000
+Number Max = 1000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.939489
+
+Number Count = 10000000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.936496
+
+Number Count = 10000000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 0.936495
+
+Number Count = 100000000
+Number Max = 100
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 5.06943
+
+Number Count = 100000000
+Number Max = 1000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 7.32188
+
+Number Count = 100000000
+Number Max = 10000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 9.76884
+
+Number Count = 100000000
+Number Max = 100000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 9.52851
+
+Number Count = 100000000
+Number Max = 1000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 9.337
+
+Number Count = 100000000
+Number Max = 10000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 9.39092
+
+Number Count = 100000000
+Number Max = 100000000
+Radix Base = 4
+Bucket Count = 2
+
+RadixSort: 9.33902
 
