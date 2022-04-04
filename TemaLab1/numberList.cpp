@@ -177,7 +177,7 @@ void numberList::shellSort(){
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
 
-	for(int gap = maxPow2(); gap > 0; gap = gap >> 1){
+	for(int gap = this->numberCount/2; gap > 0; gap = gap >> 1){
 		for(int i = gap; i < this->numberCount; ++i){
 			long long aux = this->numbers[i];
 			int j;
