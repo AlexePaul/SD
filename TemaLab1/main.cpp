@@ -16,7 +16,8 @@ int main(){
 
 	numberList ob(numberCount, numberMax, rBase, bucketNr);
 
-	ob.shellSort();
+	ob.bucketSort();
+	cout << "here";
 
 	//ob.~numberList();
     //new(&ob) numberList(numberCount, numberMax, rBase, bucketNr);
