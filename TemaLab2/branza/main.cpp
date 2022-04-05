@@ -2,43 +2,28 @@
 #include <iostream>
 #include <deque>
 #define FILE "branza"
+#define int long long
 
 using namespace std;
 
 ifstream fin(FILE".in");
 ofstream fout(FILE".out");
 
-struct element{
-	long long kg;
-	long long cost;
-	long long sapt;
-};
+deque<int> q;
+int n,t,s,sum,kg;
+int cost[1000000]; 
 
-deque<element> q;
-int n,t,s,c,p,sum;
-element array[1000000]; 
-
-int main(){
+int32_t main(){
 	fin >> n >> s >> t;
-	
-	for(int i = 0; i < n; ++i){
-		fin >> array[i].cost >> array[i].kg;
-		array[i].sapt = i; 
-	}
 
-	for(int i = n-1; i >= 0; --i){
-		while(!q.empty() && array[i].cost + s * (q.back().sapt - i) < q.back().cost && (q.back().sapt - i) <= t){
-			sum += s * (q.back().sapt - i) * q.back().kg;
-			array[i].kg += q.back().kg;
+	for (int i = 0; i < n; ++i){
+		fin >> cost[i] >> kg;
+		if(!q.empty() && q.front() == i-t-1)
+			q.pop_front();
+		while(!q.empty() && cost[q.back()] + (i - q.back()) * s >= cost[i])
 			q.pop_back();
-		}
-		q.push_back(array[i]);
-	}
-	
-	while(!q.empty()){
-		cout << q.front().kg << ' ' << q.front().cost << '\n';
-		sum += q.front().kg * q.front().cost;
-		q.pop_front();
+		q.push_back(i);
+		sum += 	kg * (cost[q.front()] + (i-q.front()) * s);	
 	}
 
 	fout << sum;

@@ -1,0 +1,7 @@
+Linked-List Loop
+Putem in cadrul structului nod sa mai cream un camp (vizitat) care sa fie initial 0 peste tot.
+Cand vom parcurge lista vom da acestui camp valoarea 1, daca vreodata in parcurgerea noastra dam de un nod care are deja valoarea 1 stim clar ca 
+exista o bucla. Daca ajungem la finalul listei, si nu am dat de niciun 1, este clar ca nu eista nicio bucla.
+Happy Number
+similar ca la problema anterioara, vom creea o lista cu rezultatele astfel incat next-ul fiecarui nod sa duca catre un nod ce contine rezultatul 
+acestuia. Apoi putem aplica algoritmul de la problema anterioara pentru a vedea daca exista sau nu o bucla/daca ajunge la nodul ce are valoarea 1. 
