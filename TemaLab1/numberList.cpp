@@ -1,5 +1,6 @@
 #include "numberList.h"
 
+#include <fstream>
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -9,26 +10,36 @@
 
 using namespace std;
 
-numberList::numberList(long long numberCount, long long numberMax, long long rBase, long long bucketNr):numbers(numberCount){
+extern ofstream fout;
+
+void numberList::valueInit(long long numberCount, long long numberMax, long long rBase, long long bucketNr){
 	this->numberCount = numberCount;
 	this->numberMax = numberMax;
 	this->radixBase = rBase;
 	this->bucketCount = bucketNr;
+	numbers.resize(this->numberCount);
+	initialNumbers.resize(this->numberCount);
+	sortedNumbers.resize(this->numberCount);
 	srand(time(NULL));
 	for (int i = 0; i < numberCount; ++i){
-		this->numbers[i] = rand()%numberMax;
+		this->initialNumbers[i] = rand()%numberMax;
+		this->numbers[i] = this->initialNumbers[i];
+		this->sortedNumbers[i] = this->initialNumbers[i];
 	}
+	sort(this->sortedNumbers.begin(),this->sortedNumbers.end());
 }
 
-numberList::~numberList(){
-	this->numbers.clear();
+void numberList::resetNumbers(){
+	for(int i = 0; i < this->numberCount; ++i){
+		this->numbers[i] = this->initialNumbers[i];
+	}
 }
 
 void numberList::print(){
 	for(int i = 0; i < this->numberCount; ++i){
-		cout << this->numbers[i] << " ";
+		fout << this->numbers[i] << " ";
 	}
-	cout << '\n';
+	fout << '\n';
 }
 
 int numberList::maxDigits(){
@@ -70,32 +81,44 @@ void numberList::radixSort(){
 	gettimeofday(&end, 0);
 	long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
-    double elapsed = seconds + microseconds*1e-6;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "RadixSort: ";
     if(this->checkSort() == true)
-   		cout << "RadixSort: " << elapsed << '\n'; 
+   		fout << elapsed << '\n'; 
 }
 
 bool numberList::checkSort(){
 	for(int i = 1; i < this->numberCount; ++i){
-		if(this->numbers[i] < this->numbers[i-1]){
-			cout << "The numberList isn't sorted!\n";
-			cout << this->numbers[i] << ' ' << this->numbers[i-1];
+		if(this->numbers[i] != this->sortedNumbers[i]){
+			fout << "The numberList isn't sorted!\n";
+			for(int i = 1; i < this->numberCount; ++i){
+				fout << this->numbers[i] << ' ';
+			}
+			fout << '\n';
+			for(int i = 1; i < this->numberCount; ++i){
+				fout << this->sortedNumbers[i] << ' ';
+			}
+			this->resetNumbers();
 			return false;
 		}
 	}
+	this->resetNumbers();
 	return true;
 }
 
 void numberList::cppSort(){
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
+	
 	sort(this->numbers.begin(), this->numbers.end());
+	
 	gettimeofday(&end, 0);
 	long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
-    double elapsed = seconds + microseconds*1e-6;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "CppSort: ";
     if(this->checkSort() == true)
-   		cout << "Cpp-Sort: " << elapsed << '\n'; 
+   		fout << elapsed << '\n'; 
 
 }
 
@@ -153,14 +176,15 @@ void numberList::mergeSort(){
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
 
-	mergeSort(0, this->numberCount);
+	mergeSort(0, this->numberCount-1);
 
 	gettimeofday(&end, 0);
 	long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
-    double elapsed = seconds + microseconds*1e-6;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "MergeSort: ";
     if(this->checkSort() == true)
-   		cout << "MergeSort: " << elapsed << '\n';
+   		fout << elapsed << '\n';
 }
 
 int numberList::maxPow2(){
@@ -190,13 +214,14 @@ void numberList::shellSort(){
 	gettimeofday(&end, 0);
 	long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
-    double elapsed = seconds + microseconds*1e-6;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "ShellSort: ";
     if(this->checkSort() == true)
-   		cout << "ShellSort: " << elapsed << '\n';
+   		fout << elapsed << '\n';
 }
 
 void numberList::bucketSort(){
-	vector<int>bucket[this->bucketCount+1];
+	vector< vector<int> >bucket(this->bucketCount+1);
 	struct timeval begin, end;
 	gettimeofday(&begin, 0);
 
@@ -233,7 +258,27 @@ void numberList::bucketSort(){
 	gettimeofday(&end, 0);
 	long seconds = end.tv_sec - begin.tv_sec;
     long microseconds = end.tv_usec - begin.tv_usec;
-    double elapsed = seconds + microseconds*1e-6;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "BucketSort: ";
     if(this->checkSort() == true)
-   		cout << "BucketSort: " << elapsed << '\n';
+   		fout << elapsed << '\n';
+}
+void numberList::selectionSort(){
+	struct timeval begin, end;
+	gettimeofday(&begin, 0);
+
+	for(int i = 0; i < this->numberCount; ++i){
+		for(int j = 0; j < this->numberCount; ++j){
+			if(this->numbers[i] < this->numbers[j])
+				swap(this->numbers[i], this->numbers[j]);
+		}
+	}
+
+	gettimeofday(&end, 0);
+	long seconds = end.tv_sec - begin.tv_sec;
+    long microseconds = end.tv_usec - begin.tv_usec;
+    long double elapsed = seconds + microseconds*1e-6;
+    fout << "SelectionSort: ";
+    if(this->checkSort() == true)
+   		fout << elapsed << '\n';
 }

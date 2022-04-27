@@ -7,6 +7,8 @@ using namespace std;
 
 class numberList{
 	vector<long long> numbers;
+	vector<long long> initialNumbers;
+	vector<long long> sortedNumbers;
 	long long numberCount;
 	long long numberMax;
 	long long radixBase;
@@ -14,17 +16,18 @@ class numberList{
 	int maxDigits();
 	int maxPow2();
 	bool checkSort();
+	void resetNumbers();
 	void merge(int lf, int mid, int rt);
 	void mergeSort(int lf, int rt);
 public:
-	numberList(long long numberCount, long long numberMax, long long rBase = 10, long long bucketNr = 10);
 	void print();
 	void radixSort();
 	void cppSort();
 	void mergeSort();
 	void shellSort();
 	void bucketSort();
-	~numberList();
+	void selectionSort();
+	void valueInit(long long numberCount, long long numberMax, long long rBase, long long bucketNr);
 };
 
 #endif
