@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
+
 #pragma GCC optimize("O3")
 #define FILE "muzica"
 
 using namespace std;
 
-ifstream fin(FILE".in");
-ofstream fout(FILE".out");
-
-int n,m;
-long long A,B,C,D,E;
-unordered_set<long long> uset(100010);
-long long nr,x,aux;
-
 int main(){
+	ifstream fin(FILE".in");
+	ofstream fout(FILE".out");
+
+	int n,m,nr,x;
+	long long A,B,C,D,E,aux;
+	unordered_set<int> uset(100012);
+	
 	ios::sync_with_stdio(false);
+	
 	fin >> n >> m;
 	fin >> A >> B >> C >> D >> E;
 	for(int i = 0; i < n; ++i){
@@ -25,9 +26,9 @@ int main(){
 		nr++;
 		uset.erase(A);
 	}
-	if(uset.find(A) != uset.end()){
+	if(uset.find(B) != uset.end()){
 		nr++;
-		uset.erase(A);
+		uset.erase(B);
 	}
 
 	for(int i = 2; i < m; ++i){
