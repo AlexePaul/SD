@@ -14,7 +14,9 @@ set<int> s;
 int main(){
 	char c;
 	int x;
-	while(fin >> c){
+	string st;
+	while(fin >> st){
+		c = st[0];
 		if(c == 'I'){
 			fin >> x;
 			s.insert(x);
@@ -35,7 +37,7 @@ int main(){
 				set<int>::iterator it1 = ++it;
 				--it;
 				set<int>::iterator it2 = --it;
-				pq.push({*(it1) - *(it2), {*(it1), *(it2)}});
+				pq.push({*it1 - *it2, {*it1, *it2}});
 				s.erase(x);
 			}
 			else{
@@ -50,18 +52,23 @@ int main(){
 				fout << 1 << '\n';
 		}
 		if(c == 'M'){
-			fin >> c;
-			fin >> c;
+			c = st[2];
 			if(c == 'N'){
-				while(!pq.empty() && (s.find(pq.top().second.first) == s.end() || s.find(pq.top().second.second) == s.end())){
-					pq.pop();
+				if(s.size() < 2)
+					fout << -1 << '\n';
+				else{
+					while(!pq.empty() && (s.find(pq.top().second.first) == s.end() || s.find(pq.top().second.second) == s.end())){
+						pq.pop();
+					}
+					fout << pq.top().first << '\n'; 
 				}
-				fout << pq.top().first << '\n'; 
 			}
 			if(c == 'X'){
 				if(s.size() < 2)
 					fout << -1 << '\n';
-				fout << *(--s.end()) - *(s.begin()) << '\n';
+				else{
+					fout << *(--s.end()) - *(s.begin()) << '\n';
+				}
 			}
 		}
 	}
