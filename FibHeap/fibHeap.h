@@ -1,41 +1,34 @@
 #ifndef fibHeap_H
 #define fibHeap_H
 
-template<typename type>
-class node<type>{
-private:
-	type key;
-	node<type>* next;
-	node<type>* prev;
-public:
-	node<type>(){
-		this->key = 0;
-		this->next = NULL;
-		this->prev = NULL;
-	}
-	node<type>(type key){
-		this->key = key;
-		this->next = NULL;
-		this->prev = NULL;
-	}
-	bool operator<(node<type> temp){
-		return this->ket < temp.key;
-	}
-	bool operator>(node<type> temp){
-		return this->ket > temp.key;
-	}
-};
+#include "tree.hpp"
+using namespace std;
+
+
+// this Heap implementation will be the implementation of a max-Heap
+
+template<class T>
+class fibHeap;
 
 template<typename type>
-class fibHeap<type>{
-private:
-	node<type>* minKey;
-	vector< node<type> > rootList;
+ostream& operator <<(ostream& o, fibHeap<type>& heap);
+
+template<typename type>
+class fibHeap{
 public:
-	void insert(type);
-	fibHeap<type>(){
-		this->minKey = NULL;
+	fibHeap(): root(){
+		root = NULL;
 	}
+	fibHeap(const fibHeap<type> &fH): root(){
+		this->root = fH.root;
+	}
+	void insert(type key);
+	void insert(tree<type>* temp);
+	void merge(fibHeap<type> fH);
+	friend ostream& operator << <>(ostream&, fibHeap<type>&);
+	type getMax();
+private:
+	tree<type>* root;
 };
 
 #endif
