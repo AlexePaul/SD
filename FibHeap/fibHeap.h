@@ -22,9 +22,13 @@ public:
 	fibHeap(const fibHeap<type> &fH): root(){
 		this->root = fH.root;
 	}
+	fibHeap(tree<type>* temp){
+		root = temp;
+	}
 	void insert(type key);
 	void insert(tree<type>* temp);
 	void merge(fibHeap<type> fH);
+	void repair();
 	friend ostream& operator << <>(ostream&, fibHeap<type>&);
 	type getMax();
 private:

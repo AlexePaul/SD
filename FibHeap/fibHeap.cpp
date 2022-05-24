@@ -7,8 +7,8 @@ using namespace std;
 	The way that this function is implemented, it will always insert to the left of the root 
 	unless the node we want inserted is bigger than the root, if that's the case it will be inserted to the right of it.
 	This way it's easier to keep the list circular.
-
 */
+
 template<typename type>
 void fibHeap<type>::insert(type key){
 	if(root == NULL)
@@ -84,10 +84,26 @@ template<typename type>
 void print(ostream& o, tree<type>* root){
 	if(root == NULL)
 		return;
-	o << root->key << ' ';
-	for(tree<type>* i = root->left; i != root && i != NULL; i = i->left){
+	for(tree<type>* i = root; i->left != root && i != NULL; i = i->left){
 		o << i->key << ' ';
 		print(o, i->child);
+	}
+}
+
+template<typename type>
+void fibHeap<type>::repair(){
+	for(tree<type>* i = root; i->left != root && i != NULL; i = i->left){
+		tree<type>* j = root;
+		while(j->left != root){
+			if(i->degree(i) == j->degree(j) && i != j){
+				fibHeap<type>* temp = new fibHeap<type>(i->child);
+				temp->merge(*(new fibHeap<type>(j)));
+				j->left->right = j->right;
+				j->right->left = j->left;
+				break;
+			}
+			j = j->left;
+		}
 	}
 }
 
@@ -111,17 +127,27 @@ template<typename type>
 void fibHeap<type>::merge(fibHeap<type> fH){
 	if(this->root->key > fH.root->key){
 		tree<type>* temp = fH.root;
-		temp->right->left = root->left;
-		root->left->right = temp->right;
-		root->left = temp;
-		temp->right = root;
+		if(temp->right != NULL && temp->left != NULL){
+			temp->right->left = root->left;
+			root->left->right = temp->right;
+			root->left = temp;
+			temp->right = root;
+		}
+		else{
+			this->insert(temp->key);
+		}
 	}
 	else{
 		tree<type>* temp = fH.root;
-		root->right->left = temp->left;
-		temp->left->right = root->right;
-		temp->left = root;
-		root->right = temp;
-		root = temp;
+		if(temp->right != NULL && temp->left != NULL){
+			root->right->left = temp->left;
+			temp->left->right = root->right;
+			temp->left = root;
+			root->right = temp;
+			root = temp;
+		}
+		else{
+			this->insert(temp->key);
+		}
 	}
 }
