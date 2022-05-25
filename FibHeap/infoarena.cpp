@@ -1,8 +1,74 @@
-#include "fibHeap.h"
-#include "tree.hpp"
+#include <fstream>
+#include <vector>
+#include <iostream>
 #include <cassert>
 
 using namespace std;
+
+template<typename type>
+struct tree{
+	tree<type>* left; // this node's left brother
+	tree<type>* right; // this node's right brother
+	tree<type>* child; 
+	type key;
+	tree<type>(int x){
+		left = this;
+		right = this;
+		child = NULL;
+		key = x;
+	}
+	tree<type>(){
+		left = this;
+		right = this;
+		child = NULL;
+	}
+	int degree(tree<type>* root){
+		if(root == NULL || root->child == NULL)
+			return 0;
+		else{
+			int maxim = -1;
+			tree<type>* i = root->child;
+			do{
+				maxim = max (maxim, 1 + degree(i));
+				i = i->left;
+			}while(i != NULL && i != root);
+			return maxim;
+		}
+	}
+
+};
+
+// this Heap implementation will be the implementation of a max-Heap
+
+template<class T>
+class fibHeap;
+
+template<typename type>
+ostream& operator <<(ostream& o, fibHeap<type>& heap);
+
+template<typename type>
+class fibHeap{
+public:
+	fibHeap(): root(){
+		root = NULL;
+	}
+	fibHeap(fibHeap<type> *fH): root(){
+		this->root = fH->root;
+	}
+	fibHeap(tree<type>* temp){
+		root = temp;
+	}
+	void insert(type key);
+	void insert(tree<type>* temp);
+	void merge(fibHeap<type> fH);
+	void repair();
+	void empty();
+	friend ostream& operator << <>(ostream&, fibHeap<type>&);
+	type getMax();
+	type removeMax();
+private:
+	tree<type>* root;
+};
 
 /*
 	The way that this function is implemented, it will always insert to the left of the root 
@@ -114,9 +180,9 @@ void fibHeap<type>::repair(){
 				break;
 			}
 			j = j->left;
-		}while(j != root);
+		}while(j != NULL && j != root);
 		i = i->left;
-	}while(i != root);
+	}while(i != NULL && i != root);
 }
 
 template<typename type>
@@ -148,7 +214,25 @@ type fibHeap<type>::removeMax(){
 			this->insert(i);
 			i = i->left;
 		}while(i != NULL && i != root->child);
-		delete root;
+		if(root->left != root && root->left != root->right){
+			root->right->left = root->left;
+			root->left->right = root->right;
+			root = root->left;
+			i = root;
+			cout << *this << '\n';
+			do{
+				if(i->key > root->key){
+					swap(i, root);
+				}
+				i = i->left;
+			}while(i != NULL && i != root);
+		}
+		else if(root->left == root){
+			this->root = NULL;
+		}
+		if(root != NULL)
+			repair();
+		//cout << *this << '\n';
 		return temp;
 	}
 
@@ -184,6 +268,33 @@ void fibHeap<type>::merge(fibHeap<type> fH){
 		}
 		else{
 			this->insert(temp->key);
+		}
+	}
+}
+ifstream fin("mergeheap.in");
+ofstream fout("mergeheap.out");
+
+int main(){
+	int n, q, op, m, a, b, x;
+	vector< fibHeap<int> > heaps;
+	fin >> n >> q;
+	heaps.resize(n+5);
+	for(int i = 0; i < q; ++i){
+		fin >> op;
+		if(op == 1){
+			fin >> m >> x;
+			heaps[m].insert(x);
+			continue;
+		}
+		if(op == 2){
+			fin >> m;
+			fout << heaps[m].removeMax() << '\n';
+			continue;
+		}
+		if(op == 3){
+			fin >> a >> b;
+			heaps[a].merge(heaps[b]);
+			heaps[b].empty();
 		}
 	}
 }

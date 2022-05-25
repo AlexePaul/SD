@@ -26,14 +26,16 @@ struct tree{
 		child = NULL;
 	}
 	int degree(tree<type>* root){
-		if(root->child == NULL)
+		if(root == NULL || root->child == NULL)
 			return 0;
 		else{
 			int maxim = -1;
-			root = root->child;
-			for(tree<type>* i = root->left; i != root && i != NULL; i = i->left){
+			tree<type>* i = root->child;
+			do{
 				maxim = max (maxim, 1 + degree(i));
-			}
+				i = i->left;
+			}while(i != NULL && i != root);
+			return maxim;
 		}
 	}
 

@@ -19,7 +19,7 @@ public:
 	fibHeap(): root(){
 		root = NULL;
 	}
-	fibHeap(const fibHeap<type> &fH): root(){
+	fibHeap(fibHeap<type> *fH): root(){
 		this->root = fH.root;
 	}
 	fibHeap(tree<type>* temp){
@@ -29,8 +29,10 @@ public:
 	void insert(tree<type>* temp);
 	void merge(fibHeap<type> fH);
 	void repair();
+	void empty();
 	friend ostream& operator << <>(ostream&, fibHeap<type>&);
 	type getMax();
+	type removeMax();
 private:
 	tree<type>* root;
 };
